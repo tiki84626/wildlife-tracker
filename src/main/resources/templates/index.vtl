@@ -1,0 +1,13 @@
+<h1>Hair Salons</h1>
+#if (!($hairsalons.isEmpty()))
+<p><a href="/hairsalons/new">Add new Hair Salon.</a></p>
+#foreach ($hairsalon in $hairsalons)
+<a href="/hairsalons/$hairsalon.getId()">
+  <div class="hoverText">
+    <h3 id="hairsalonid">$hairsalon.getName()</h3>
+  </div>
+</a>
+#end
+#else
+  <p id="elseStatement">There are no Hair Salons stored currently. <a href="/hairsalons/new">Add one now!</a></p>
+#end

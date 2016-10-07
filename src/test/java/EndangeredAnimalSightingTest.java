@@ -9,7 +9,7 @@ public class EndangeredAnimalSightingTest {
 
   @Test
   public void endangeredAnimalSighting_instantiatesCorrectly_true() {
-    EndangeredAnimalSighting testEndangeredAnimalSighting = new EndangeredAnimalSighting("fox", "zone-1");
+    EndangeredAnimalSighting testEndangeredAnimalSighting = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
     assertEquals(true, testEndangeredAnimalSighting instanceof EndangeredAnimalSighting);
   }
 

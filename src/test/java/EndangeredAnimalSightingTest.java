@@ -14,9 +14,21 @@ public class EndangeredAnimalSightingTest {
   }
 
   @Test
-  public void EndangeredAnimalSighting_instantiatesWithName_String() {
+  public void endangeredAnimalSighting_getsNamefromEndangeredAnimalSightingObject_String() {
     EndangeredAnimalSighting testEndangeredAnimalSighting = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
     assertEquals("Red Eared Fox", testEndangeredAnimalSighting.getName());
+  }
+
+  @Test
+  public void endangeredAnimalSighting_getsHealthfromEndangeredAnimalSightingObject_String() {
+    EndangeredAnimalSighting testEndangeredAnimalSighting = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
+    assertEquals("ill", testEndangeredAnimalSighting.getHealth());
+  }
+
+  @Test
+  public void endangeredAnimalSighting_getsAgefromEndangeredAnimalSightingObject_String() {
+    EndangeredAnimalSighting testEndangeredAnimalSighting = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
+    assertEquals("young", testEndangeredAnimalSighting.getAge());
   }
 
 }

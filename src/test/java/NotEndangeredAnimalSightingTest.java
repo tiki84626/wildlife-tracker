@@ -22,4 +22,13 @@ public class NotEndangeredAnimalSightingTest {
     assertEquals("Red Fox", testNotEndangeredAnimalSighting.getName());
   }
 
+  @Test
+  public void find_FindsNotNotEndangeredAnimalSightingInstanceRelatedToId_true() {
+    NotEndangeredAnimalSighting testNotEndangeredAnimalSighting1 = new NotEndangeredAnimalSighting("Red Fox", 1);
+    testNotEndangeredAnimalSighting1.save();
+    NotEndangeredAnimalSighting testNotEndangeredAnimalSighting2 = new NotEndangeredAnimalSighting("Red Fox", 1);
+    testNotEndangeredAnimalSighting2.save();
+    assertEquals(testNotEndangeredAnimalSighting2, NotEndangeredAnimalSighting.find(testNotEndangeredAnimalSighting2.getId()));
+  }
+
 }

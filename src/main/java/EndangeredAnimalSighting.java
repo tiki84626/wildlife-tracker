@@ -2,6 +2,9 @@ import org.sql2o.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class EndangeredAnimalSighting extends AnimalSighting implements DatabaseManagement {
   private String health;
@@ -57,6 +60,7 @@ public class EndangeredAnimalSighting extends AnimalSighting implements Database
     }
   }
 
+  @Override
   public void update() {
     try(Connection con = DB.sql2o.open()){
     String sql = "UPDATE animal_sightings SET (name, description, location, rangerId, timeOfLastSighting, type, health, age) = (:name, :description, :location, :rangerId, :timeOfLastSighting, :type, :health, :age) WHERE id = :id;";

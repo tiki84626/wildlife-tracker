@@ -2,6 +2,9 @@ import org.sql2o.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class NotEndangeredAnimalSighting extends AnimalSighting implements DatabaseManagement {
 
@@ -13,29 +16,22 @@ public class NotEndangeredAnimalSighting extends AnimalSighting implements Datab
     type = DATABASE_TYPE;
   }
 
-  public void update() {
-    try(Connection con = DB.sql2o.open()){
-    String sql = "UPDATE animal_sightings SET (name, description, location, " +
-                 "rangerId, timeOfLastSighting, type) = (:name, :description, " +
-                 ":location, :rangerId, :timeOfLastSighting, :type) WHERE id = :id;";
-    con.createQuery(sql)
-      .addParameter("name", this.name)
-      .addParameter("description", this.description)
-      .addParameter("location", this.location)
-      .addParameter("rangerId", this.rangerId)
-      .addParameter("timeOfLastSighting", this.timeOfLastSighting)
-      .addParameter("type", this.type)
-      .addParameter("id", this.id)
-      .executeUpdate();
-    }
-  }
-
   public static List<NotEndangeredAnimalSighting> all() {
     String sql = "SELECT * FROM animal_sightings WHERE type='notEndangered';";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql)
       .throwOnMappingFailure(false)
       .executeAndFetch(NotEndangeredAnimalSighting.class);
+    }
+  }
+
+  public static NotEndangeredAnimalSighting find(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM animal_sightings WHERE id = :id;";
+      NotEndangeredAnimalSighting notEndangeredAnimalSighting = con.createQuery(sql)
+        .addParameter("id", id)
+        .executeAndFetchFirst(NotEndangeredAnimalSighting.class);
+      return notEndangeredAnimalSighting;
     }
   }
 

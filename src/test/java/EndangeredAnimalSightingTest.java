@@ -2,6 +2,9 @@ import org.sql2o.*;
 import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.*;
+import java.text.DateFormat;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class EndangeredAnimalSightingTest {
   @Rule
@@ -49,7 +52,7 @@ public class EndangeredAnimalSightingTest {
   }
 
   @Test
-  public void find_FindsAnimalInstanceRelatedToId_true() {
+  public void find_FindsEndangeredAnimalSightingInstanceRelatedToId_true() {
     EndangeredAnimalSighting testEndangeredAnimalSighting1 = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
     testEndangeredAnimalSighting1.save();
     EndangeredAnimalSighting testEndangeredAnimalSighting2 = new EndangeredAnimalSighting("Black Footed Duck", 2, "okay", "adult");

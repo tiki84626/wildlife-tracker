@@ -13,4 +13,10 @@ public class EndangeredAnimalSightingTest {
     assertEquals(true, testEndangeredAnimalSighting instanceof EndangeredAnimalSighting);
   }
 
+  @Test
+  public void EndangeredAnimalSighting_instantiatesWithName_String() {
+    EndangeredAnimalSighting testEndangeredAnimalSighting = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
+    assertEquals("Red Eared Fox", testEndangeredAnimalSighting.getName());
+  }
+
 }

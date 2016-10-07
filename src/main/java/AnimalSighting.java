@@ -38,8 +38,36 @@ public abstract class AnimalSighting {
     return timeOfLastSighting;
   }
 
+  public String getType() {
+    return type;
+  }
+
   public int getId() {
     return id;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public void setLocation(String location) {
+    this.location = location;
+  }
+
+  public void setRangerId(int rangerId) {
+    this.rangerId = rangerId;
+  }
+
+  public void setTimeOfLastSighting(Timestamp timeOfLastSighting) {
+    this.timeOfLastSighting = timeOfLastSighting;
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 
   @Override
@@ -57,7 +85,7 @@ public abstract class AnimalSighting {
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO animal_sightings (name, description, location, " +
                    "rangerId, timeOfLastSighting, type) VALUES (:name, " +
-                   ":description, :location, :rangerId, :timeOfLastSighting, :type)";
+                   ":description, :location, :rangerId, :timeOfLastSighting, :type);";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", this.name)
         .addParameter("description", this.description)

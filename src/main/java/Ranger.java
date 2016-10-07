@@ -75,7 +75,6 @@ public class Ranger implements DatabaseManagement {
     }
   }
 
-
   @Override
   public boolean equals(Object otherRanger){
     if (!(otherRanger instanceof Ranger)) {

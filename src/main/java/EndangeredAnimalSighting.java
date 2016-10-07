@@ -23,6 +23,22 @@ public class EndangeredAnimalSighting extends AnimalSighting implements Database
     type = DATABASE_TYPE;
   }
 
+  public String getHealth() {
+    return health;
+  }
+
+  public String getAge() {
+    return age;
+  }
+
+  public void setHealth(String health) {
+    this.health = health;
+  }
+
+  public void setAge(String age) {
+    this.age = age;
+  }
+
   @Override
   public void save() {
     try(Connection con = DB.sql2o.open()) {
@@ -38,6 +54,23 @@ public class EndangeredAnimalSighting extends AnimalSighting implements Database
         .addParameter("age", this.age)
         .executeUpdate()
         .getKey();
+    }
+  }
+
+  public void update() {
+    try(Connection con = DB.sql2o.open()){
+    String sql = "UPDATE animal_sightings SET (name, description, location, rangerId, timeOfLastSighting, type, health, age) = (:name, :description, :location, :rangerId, :timeOfLastSighting, :type, :health, :age) WHERE id = :id;";
+    con.createQuery(sql)
+      .addParameter("name", this.name)
+      .addParameter("description", this.description)
+      .addParameter("location", this.location)
+      .addParameter("rangerId", this.rangerId)
+      .addParameter("timeOfLastSighting", this.timeOfLastSighting)
+      .addParameter("type", this.type)
+      .addParameter("health", this.health)
+      .addParameter("age", this.age)
+      .addParameter("id", this.id)
+      .executeUpdate();
     }
   }
 

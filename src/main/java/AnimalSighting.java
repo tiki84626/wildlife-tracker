@@ -2,6 +2,9 @@ import org.sql2o.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public abstract class AnimalSighting {
 
@@ -34,8 +37,9 @@ public abstract class AnimalSighting {
     return rangerId;
   }
 
-  public Timestamp getTimeOfLastSighting() {
-    return timeOfLastSighting;
+  public String getTimeOfLastSighting() {
+    String newTime = new SimpleDateFormat("MMMM dd, yyyy").format(timeOfLastSighting);
+    return newTime;
   }
 
   public String getType() {
@@ -64,10 +68,6 @@ public abstract class AnimalSighting {
 
   public void setTimeOfLastSighting(Timestamp timeOfLastSighting) {
     this.timeOfLastSighting = timeOfLastSighting;
-  }
-
-  public void setType(String type) {
-    this.type = type;
   }
 
   @Override

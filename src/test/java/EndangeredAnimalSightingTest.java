@@ -57,4 +57,12 @@ public class EndangeredAnimalSightingTest {
     assertEquals(testEndangeredAnimalSighting2, EndangeredAnimalSighting.find(testEndangeredAnimalSighting2.getId()));
   }
 
+  @Test
+  public void delete_deletesEndangeredAnimalSighting_true() {
+    EndangeredAnimalSighting testEndangeredAnimalSighting = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
+    testEndangeredAnimalSighting.save();
+    testEndangeredAnimalSighting.delete();
+    assertEquals(null, EndangeredAnimalSighting.find(testEndangeredAnimalSighting.getId()));
+  }
+
 }

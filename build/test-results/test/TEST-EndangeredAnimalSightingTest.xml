@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="EndangeredAnimalSightingTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-10-07T15:09:52" hostname="Andrews-MacBook-Pro.local" time="0.22">
+<testsuite name="EndangeredAnimalSightingTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-10-07T15:20:09" hostname="Andrews-MacBook-Pro.local" time="0.212">
   <properties/>
-  <testcase name="find_FindsAnimalInstanceRelatedToId_true" classname="EndangeredAnimalSightingTest" time="0.148"/>
-  <testcase name="endangeredAnimalSighting_instantiatesCorrectly_true" classname="EndangeredAnimalSightingTest" time="0.006"/>
-  <testcase name="save_insertsObjectIntoDatabase_EndangeredAnimalSighting" classname="EndangeredAnimalSightingTest" time="0.016"/>
+  <testcase name="find_FindsAnimalInstanceRelatedToId_true" classname="EndangeredAnimalSightingTest" time="0.122"/>
+  <testcase name="endangeredAnimalSighting_instantiatesCorrectly_true" classname="EndangeredAnimalSightingTest" time="0.005"/>
+  <testcase name="save_insertsObjectIntoDatabase_EndangeredAnimalSighting" classname="EndangeredAnimalSightingTest" time="0.017"/>
   <testcase name="endangeredAnimalSighting_getsNamefromEndangeredAnimalSightingObject_String" classname="EndangeredAnimalSightingTest" time="0.005"/>
-  <testcase name="endangeredAnimalSighting_getsHealthfromEndangeredAnimalSightingObject_String" classname="EndangeredAnimalSightingTest" time="0.007"/>
+  <testcase name="endangeredAnimalSighting_getsHealthfromEndangeredAnimalSightingObject_String" classname="EndangeredAnimalSightingTest" time="0.005"/>
   <testcase name="all_returnsAllInstancesOfEndangeredAnimal_true" classname="EndangeredAnimalSightingTest" time="0.027"/>
-  <testcase name="endangeredAnimalSighting_getsAgefromEndangeredAnimalSightingObject_String" classname="EndangeredAnimalSightingTest" time="0.007"/>
+  <testcase name="delete_deletesEndangeredAnimalSighting_true" classname="EndangeredAnimalSightingTest" time="0.021"/>
+  <testcase name="endangeredAnimalSighting_getsAgefromEndangeredAnimalSightingObject_String" classname="EndangeredAnimalSightingTest" time="0.006"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

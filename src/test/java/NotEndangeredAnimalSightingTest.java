@@ -3,14 +3,14 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.*;
 
-public class AnimalTest{
+public class NotEndangeredAnimalSightingTest {
   @Rule
   public DatabaseRule database = new DatabaseRule();
 
   @Test
-  public void animal_instantiatesCorrectly_true() {
-    Animal testAnimal = new Animal("fox", "zone-1");
-    assertEquals(true, testAnimal instanceof Animal);
+  public void notEndangeredAnimalSighting_instantiatesCorrectly_true() {
+    NotEndangeredAnimalSighting testNotEndangeredAnimalSighting = new NotEndangeredAnimalSighting("fox", "zone-1");
+    assertEquals(true, testNotEndangeredAnimalSighting instanceof NotEndangeredAnimalSighting);
   }
 
 }

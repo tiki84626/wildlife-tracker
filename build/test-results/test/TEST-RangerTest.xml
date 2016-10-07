@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RangerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-10-07T14:57:55" hostname="Andrews-MacBook-Pro.local" time="0.182">
+<testsuite name="RangerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-10-07T15:00:33" hostname="Andrews-MacBook-Pro.local" time="0.148">
   <properties/>
-  <testcase name="getAnimalSightings_retrievesAllAnimalSightingsFromDatabase_animalSightingsList" classname="RangerTest" time="0.063"/>
-  <testcase name="update_updatesRanger_true" classname="RangerTest" time="0.016"/>
-  <testcase name="save_insertsObjectIntoDatabase_Ranger" classname="RangerTest" time="0.017"/>
-  <testcase name="equals_returnsTrueIfNameAndEmailAreSame_true" classname="RangerTest" time="0.007"/>
-  <testcase name="find_FindsRangerForGivenId_true" classname="RangerTest" time="0.021"/>
-  <testcase name="all_returnsAllInstancesOfRanger_true" classname="RangerTest" time="0.024"/>
-  <testcase name="getName_rangerInstantiatesWithName_JohnSmith" classname="RangerTest" time="0.004"/>
+  <testcase name="getAnimalSightings_retrievesAllAnimalSightingsFromDatabase_animalSightingsList" classname="RangerTest" time="0.029"/>
+  <testcase name="update_updatesRanger_true" classname="RangerTest" time="0.015"/>
+  <testcase name="save_insertsObjectIntoDatabase_Ranger" classname="RangerTest" time="0.015"/>
+  <testcase name="equals_returnsTrueIfNameAndEmailAreSame_true" classname="RangerTest" time="0.005"/>
+  <testcase name="find_FindsRangerForGivenId_true" classname="RangerTest" time="0.02"/>
+  <testcase name="all_returnsAllInstancesOfRanger_true" classname="RangerTest" time="0.026"/>
+  <testcase name="getName_rangerInstantiatesWithName_JohnSmith" classname="RangerTest" time="0.007"/>
   <testcase name="getEmail_rangerInstantiatesWithEmail_johnsmithemail" classname="RangerTest" time="0.004"/>
   <testcase name="ranger_instantiatesCorrectly_true" classname="RangerTest" time="0.005"/>
-  <testcase name="delete_deletesRanger_true" classname="RangerTest" time="0.018"/>
+  <testcase name="delete_deletesRanger_true" classname="RangerTest" time="0.02"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -31,4 +31,11 @@ public class EndangeredAnimalSightingTest {
     assertEquals("young", testEndangeredAnimalSighting.getAge());
   }
 
+  @Test
+  public void save_insertsObjectIntoDatabase_EndangeredAnimalSighting() {
+    EndangeredAnimalSighting testEndangeredAnimalSighting = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
+    testEndangeredAnimalSighting.save();
+    assertTrue(EndangeredAnimalSighting.all().get(0).equals(testEndangeredAnimalSighting));
+  }
+
 }

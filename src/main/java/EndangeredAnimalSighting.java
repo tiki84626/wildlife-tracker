@@ -83,4 +83,14 @@ public class EndangeredAnimalSighting extends AnimalSighting implements Database
     }
   }
 
+  public static EndangeredAnimalSighting find(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM animal_sightings WHERE id = :id;";
+      EndangeredAnimalSighting endangeredAnimalSighting = con.createQuery(sql)
+        .addParameter("id", id)
+        .executeAndFetchFirst(EndangeredAnimalSighting.class);
+      return endangeredAnimalSighting;
+    }
+  }
+
 }

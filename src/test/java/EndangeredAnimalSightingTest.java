@@ -48,4 +48,13 @@ public class EndangeredAnimalSightingTest {
     assertTrue(EndangeredAnimalSighting.all().get(0).equals(testEndangeredAnimalSighting));
   }
 
+  @Test
+  public void find_FindsAnimalInstanceRelatedToId_true() {
+    EndangeredAnimalSighting testEndangeredAnimalSighting1 = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
+    testEndangeredAnimalSighting1.save();
+    EndangeredAnimalSighting testEndangeredAnimalSighting2 = new EndangeredAnimalSighting("Black Footed Duck", 2, "okay", "adult");
+    testEndangeredAnimalSighting2.save();
+    assertEquals(testEndangeredAnimalSighting2, EndangeredAnimalSighting.find(testEndangeredAnimalSighting2.getId()));
+  }
+
 }

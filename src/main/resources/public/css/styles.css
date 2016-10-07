@@ -11,6 +11,11 @@ html {
   font-variant: small-caps;
 }
 
+#flag {
+  width: 200px;
+  height: 120px;
+}
+
 #wrap {
   min-height: 100%;
 }

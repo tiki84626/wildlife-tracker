@@ -9,7 +9,7 @@ public class AnimalTest{
 
   @Test
   public void animal_instantiatesCorrectly_true() {
-    Animal testAnimal = new Animal("fox");
+    Animal testAnimal = new Animal("fox", "zone-1");
     assertEquals(true, testAnimal instanceof Animal);
   }
 

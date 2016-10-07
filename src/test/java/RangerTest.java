@@ -50,7 +50,7 @@ public class RangerTest {
   }
 
   @Test
-  public void getMonsters_retrievesAllMonstersFromDatabase_monstersList() {
+  public void getAnimalSightings_retrievesAllAnimalSightingsFromDatabase_animalSightingsList() {
     Ranger testRanger = new Ranger("John Smith", "johnsmith@test.com", "Sergeant", "../../../../img/sergeant.png");
     testRanger.save();
     EndangeredAnimalSighting firstAnimalSighting = new EndangeredAnimalSighting("Red Eared Fox", testRanger.getId(), "healthy", "young");
@@ -83,6 +83,14 @@ public class RangerTest {
     Ranger testRanger2 = new Ranger("Bob Lie", "boblie@test.com", "Capitan", "../../../../img/capitan.png");
     testRanger2.save();
     assertEquals(testRanger2, Ranger.find(testRanger2.getId()));
+  }
+
+  @Test
+  public void delete_deletesRanger_true() {
+    Ranger testRanger = new Ranger("John Smith", "johnsmith@test.com", "Sergeant", "../../../../img/sergeant.png");
+    testRanger.save();
+    testRanger.delete();
+    assertEquals(0, Ranger.all().size());
   }
 
 

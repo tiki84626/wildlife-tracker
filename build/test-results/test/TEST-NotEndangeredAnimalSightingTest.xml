@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NotEndangeredAnimalSightingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-07T12:22:33" hostname="Andrews-MacBook-Pro.local" time="0.006">
+<testsuite name="NotEndangeredAnimalSightingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-07T14:45:16" hostname="Andrews-MacBook-Pro.local" time="0.023">
   <properties/>
-  <testcase name="notEndangeredAnimalSighting_instantiatesCorrectly_true" classname="NotEndangeredAnimalSightingTest" time="0.006"/>
+  <testcase name="notEndangeredAnimalSighting_instantiatesCorrectly_true" classname="NotEndangeredAnimalSightingTest" time="0.023"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

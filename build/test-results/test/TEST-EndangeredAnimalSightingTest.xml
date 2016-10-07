@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="EndangeredAnimalSightingTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-10-07T15:00:33" hostname="Andrews-MacBook-Pro.local" time="0.145">
+<testsuite name="EndangeredAnimalSightingTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-10-07T15:05:02" hostname="Andrews-MacBook-Pro.local" time="0.19">
   <properties/>
-  <testcase name="endangeredAnimalSighting_instantiatesCorrectly_true" classname="EndangeredAnimalSightingTest" time="0.079"/>
-  <testcase name="save_insertsObjectIntoDatabase_EndangeredAnimalSighting" classname="EndangeredAnimalSightingTest" time="0.05"/>
+  <testcase name="endangeredAnimalSighting_instantiatesCorrectly_true" classname="EndangeredAnimalSightingTest" time="0.083"/>
+  <testcase name="save_insertsObjectIntoDatabase_EndangeredAnimalSighting" classname="EndangeredAnimalSightingTest" time="0.061"/>
   <testcase name="endangeredAnimalSighting_getsNamefromEndangeredAnimalSightingObject_String" classname="EndangeredAnimalSightingTest" time="0.005"/>
-  <testcase name="endangeredAnimalSighting_getsHealthfromEndangeredAnimalSightingObject_String" classname="EndangeredAnimalSightingTest" time="0.005"/>
-  <testcase name="endangeredAnimalSighting_getsAgefromEndangeredAnimalSightingObject_String" classname="EndangeredAnimalSightingTest" time="0.006"/>
+  <testcase name="endangeredAnimalSighting_getsHealthfromEndangeredAnimalSightingObject_String" classname="EndangeredAnimalSightingTest" time="0.006"/>
+  <testcase name="all_returnsAllInstancesOfEndangeredAnimal_true" classname="EndangeredAnimalSightingTest" time="0.029"/>
+  <testcase name="endangeredAnimalSighting_getsAgefromEndangeredAnimalSightingObject_String" classname="EndangeredAnimalSightingTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

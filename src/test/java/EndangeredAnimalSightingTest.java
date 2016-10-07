@@ -32,6 +32,16 @@ public class EndangeredAnimalSightingTest {
   }
 
   @Test
+  public void all_returnsAllInstancesOfEndangeredAnimal_true() {
+    EndangeredAnimalSighting testEndangeredAnimalSighting1 = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
+    testEndangeredAnimalSighting1.save();
+    EndangeredAnimalSighting testEndangeredAnimalSighting2 = new EndangeredAnimalSighting("Black Footed Duck", 2, "okay", "adult");
+    testEndangeredAnimalSighting2.save();
+    assertEquals(true, EndangeredAnimalSighting.all().get(0).equals(testEndangeredAnimalSighting1));
+    assertEquals(true, EndangeredAnimalSighting.all().get(1).equals(testEndangeredAnimalSighting2));
+  }
+
+  @Test
   public void save_insertsObjectIntoDatabase_EndangeredAnimalSighting() {
     EndangeredAnimalSighting testEndangeredAnimalSighting = new EndangeredAnimalSighting("Red Eared Fox", 1, "ill", "young");
     testEndangeredAnimalSighting.save();

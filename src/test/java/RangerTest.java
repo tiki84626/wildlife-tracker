@@ -32,21 +32,59 @@ public class RangerTest {
     assertTrue(testRanger1.equals(testRanger2));
   }
 
-  // @Test
-  // public void save_insertsObjectIntoDatabase_Person() {
-  //   Person testPerson = new Person("Henry", "henry@henry.com");
-  //   testPerson.save();
-  //   assertEquals(true, Person.all().get(0).equals(testPerson));
-  // }
-  //
-  // @Test
-  // public void all_returnsAllInstancesOfPerson_true() {
-  //   Person firstPerson = new Person("Henry", "henry@henry.com");
-  //   firstPerson.save();
-  //   Person secondPerson = new Person("Harriet", "harriet@harriet.com");
-  //   secondPerson.save();
-  //   assertEquals(true, Person.all().get(0).equals(firstPerson));
-  //   assertEquals(true, Person.all().get(1).equals(secondPerson));
-  // }
+  @Test
+  public void save_insertsObjectIntoDatabase_Ranger() {
+    Ranger testRanger = new Ranger("John Smith", "johnsmith@test.com", "Sergeant", "../../../../img/sergeant.png");
+    testRanger.save();
+    assertEquals(true, Ranger.all().get(0).equals(testRanger));
+  }
+
+  @Test
+  public void all_returnsAllInstancesOfRanger_true() {
+    Ranger testRanger1 = new Ranger("John Smith", "johnsmith@test.com", "Sergeant", "../../../../img/sergeant.png");
+    testRanger1.save();
+    Ranger testRanger2 = new Ranger("Bob Lie", "boblie@test.com", "Capitan", "../../../../img/capitan.png");
+    testRanger2.save();
+    assertEquals(true, Ranger.all().get(0).equals(testRanger1));
+    assertEquals(true, Ranger.all().get(1).equals(testRanger2));
+  }
+
+  @Test
+  public void getMonsters_retrievesAllMonstersFromDatabase_monstersList() {
+    Ranger testRanger = new Ranger("John Smith", "johnsmith@test.com", "Sergeant", "../../../../img/sergeant.png");
+    testRanger.save();
+    EndangeredAnimalSighting firstAnimalSighting = new EndangeredAnimalSighting("Red Eared Fox", testRanger.getId(), "healthy", "young");
+    firstAnimalSighting.save();
+    NotEndangeredAnimalSighting secondAnimalSighting = new NotEndangeredAnimalSighting("Fox", testRanger.getId());
+    secondAnimalSighting.save();
+    Object[] animalSightings = new Object[] { firstAnimalSighting, secondAnimalSighting };
+    assertTrue(testRanger.getAnimalSightings().containsAll(Arrays.asList(animalSightings)));
+  }
+
+  @Test
+  public void update_updatesRanger_true() {
+    Ranger testRanger = new Ranger("John Smith", "johnsmith@test.com", "Sergeant", "../../../../img/sergeant.png");
+    testRanger.save();
+    testRanger.setName("Greg Hail");
+    testRanger.setEmail("greghail@test.com");
+    testRanger.setRank("Colonel");
+    testRanger.setImgURL("../../../../img/colonel.png");
+    testRanger.update();
+    assertEquals("Greg Hail", testRanger.getName());
+    assertEquals("greghail@test.com", testRanger.getEmail());
+    assertEquals("Colonel", testRanger.getRank());
+    assertEquals("../../../../img/colonel.png", testRanger.getImgURL());
+  }
+
+  @Test
+  public void find_FindsRangerForGivenId_true() {
+    Ranger testRanger1 = new Ranger("John Smith", "johnsmith@test.com", "Sergeant", "../../../../img/sergeant.png");
+    testRanger1.save();
+    Ranger testRanger2 = new Ranger("Bob Lie", "boblie@test.com", "Capitan", "../../../../img/capitan.png");
+    testRanger2.save();
+    assertEquals(testRanger2, Ranger.find(testRanger2.getId()));
+  }
+
+
 
 }
